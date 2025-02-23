@@ -10,6 +10,11 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             direction: rtl;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
         }
         img {
             width: 80%;
@@ -30,23 +35,106 @@
             text-decoration: none;
             border-radius: 5px;
             font-size: 18px;
+            cursor: pointer;
+            border: none;
         }
         .button:hover {
             background-color: #0056b3;
+        }
+        /* إخفاء قسم WOODE افتراضيًا */
+        #woodeSection {
+            display: none;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .animated-image {
+            width: 80%;
+            max-width: 400px;
+            position: relative;
+            animation: moveImage 4s linear infinite;
+        }
+        @keyframes moveImage {
+            0% { transform: translateX(-100%); opacity: 0; }
+            50% { transform: translateX(0); opacity: 1; }
+            100% { transform: translateX(100%); opacity: 0; }
+        }
+        textarea {
+            width: 80%;
+            height: 100px;
+            border-radius: 5px;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            resize: none;
+        }
+        .send-button {
+            display: block;
+            width: 120px;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: #ff5733;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .send-button:hover {
+            background-color: #c70039;
         }
     </style>
 </head>
 <body>
 
-    <img src="https://i.postimg.cc/QxB7bB8P/1740270181225.jpg" alt="صورة الجامعة">
-    
-    <h1>جامعة الرباط الوطني</h1>
-    <h2>تقنية المعلومات</h2>
-    <h3>الدفعة 22</h3>
+    <!-- القسم الرئيسي -->
+    <div id="mainSection">
+        <img src="https://i.postimg.cc/QxB7bB8P/1740270181225.jpg" alt="صورة الجامعة">
+        <h1>جامعة الرباط الوطني</h1>
+        <h2>تقنية المعلومات</h2>
+        <h3>الدفعة 22</h3>
 
-    <a href="https://t.me/NO_BRAK" class="button" target="_blank">قناة التلغرام</a>
+        <a href="https://t.me/NO_BRAK" class="button" target="_blank">قناة التلغرام</a>
+        <button class="button" onclick="showWoode()">APUT WOODE</button>
+    </div>
 
-    <a href="wood.html" class="button">APUT WOODE</a>
+    <!-- قسم WOODE -->
+    <div id="woodeSection">
+        <img src="https://i.postimg.cc/v8KgcQrv/5828112793965019214-99jpg-0.jpg" alt="صورة APUT WOODE" class="animated-image">
+        <h2>APUT WOODE</h2>
+        <p><strong>اسمه الحقيقي:</strong> احمد ابوعبيدة عبدالرحيم</p>
+        <p><strong>تاريخ ومكان الميلاد:</strong> مدينة الخرطوم | 2005/03/30</p>
+        <p><strong>لقبه:</strong> أودي -𝗪𝗢𝗢𝗗𝗘-</p>
+        <p><strong>ترعرع في:</strong> الخرطوم - عد حسين (م٢)</p>
+        <p><strong>الدراسة:</strong> 
+            <br> روضة القمة 
+            <br> مدرسة الإمام الغزالي (الأساس) 
+            <br> مدرسة الفتح المبين الخاصة (الثانوي) 
+            <br> جامعة الرباط الوطني - كلية علوم الحاسوب (تقنية المعلومات)
+        </p>
+        <p><strong>الطموح:</strong> يرغب في أن يصبح مبرمجًا محترفًا وما زال يعمل لتحقيق حلمه.</p>
+
+        <div class="message-box">
+            <textarea placeholder="اكتب رسالتك هنا..."></textarea>
+            <button class="send-button">إرسال</button>
+        </div>
+
+        <button class="button" onclick="showMain()">العودة</button>
+    </div>
+
+    <script>
+        function showWoode() {
+            document.getElementById("mainSection").style.display = "none";
+            document.getElementById("woodeSection").style.display = "block";
+        }
+
+        function showMain() {
+            document.getElementById("woodeSection").style.display = "none";
+            document.getElementById("mainSection").style.display = "block";
+        }
+    </script>
 
 </body>
 </html>
