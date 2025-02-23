@@ -11,25 +11,29 @@
             background: linear-gradient(to right, #00c6ff, #0072ff);
             color: white;
             direction: rtl;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 100px;
+            padding: 20px;
         }
         .animated-image {
             width: 80%;
             max-width: 400px;
-            position: absolute;
-            top: 20px;
-            left: -100%;
+            position: relative;
             animation: moveImage 4s linear infinite;
         }
         @keyframes moveImage {
-            0% { left: -100%; opacity: 0; }
-            50% { left: 50%; transform: translateX(-50%); opacity: 1; }
-            100% { left: 100%; opacity: 0; }
+            0% { transform: translateX(-100%); opacity: 0; }
+            50% { transform: translateX(0); opacity: 1; }
+            100% { transform: translateX(100%); opacity: 0; }
         }
         .content {
-            margin-top: 200px;
-            padding: 20px;
             background: rgba(255, 255, 255, 0.2);
             border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
         }
         .message-box {
             margin-top: 20px;
@@ -41,10 +45,11 @@
             border: none;
             padding: 10px;
             font-size: 16px;
+            resize: none;
         }
         .send-button {
             display: block;
-            width: 100px;
+            width: 120px;
             margin: 10px auto;
             padding: 10px;
             background-color: #ff5733;
@@ -61,25 +66,27 @@
 </head>
 <body>
 
-    <img src="https://i.postimg.cc/v8KgcQrv/5828112793965019214-99jpg-0.jpg" alt="صورة APUT WOODE" class="animated-image">
+    <div class="container">
+        <img src="https://i.postimg.cc/v8KgcQrv/5828112793965019214-99jpg-0.jpg" alt="صورة APUT WOODE" class="animated-image">
 
-    <div class="content">
-        <h2>APUT WOODE</h2>
-        <p><strong>اسمه الحقيقي:</strong> احمد ابوعبيدة عبدالرحيم</p>
-        <p><strong>تاريخ ومكان الميلاد:</strong> مدينة الخرطوم | 2005/03/30</p>
-        <p><strong>لقبه:</strong> أودي -𝗪𝗢𝗢𝗗𝗘-</p>
-        <p><strong>ترعرع في:</strong> الخرطوم - عد حسين (م٢)</p>
-        <p><strong>الدراسة:</strong> 
-            <br> روضة القمة 
-            <br> مدرسة الإمام الغزالي (الأساس) 
-            <br> مدرسة الفتح المبين الخاصة (الثانوي) 
-            <br> جامعة الرباط الوطني - كلية علوم الحاسوب (تقنية المعلومات)
-        </p>
-        <p><strong>الطموح:</strong> يرغب في أن يصبح مبرمجًا محترفًا وما زال يعمل لتحقيق حلمه.</p>
+        <div class="content">
+            <h2>APUT WOODE</h2>
+            <p><strong>اسمه الحقيقي:</strong> احمد ابوعبيدة عبدالرحيم</p>
+            <p><strong>تاريخ ومكان الميلاد:</strong> مدينة الخرطوم | 2005/03/30</p>
+            <p><strong>لقبه:</strong> أودي -𝗪𝗢𝗢𝗗𝗘-</p>
+            <p><strong>ترعرع في:</strong> الخرطوم - عد حسين (م٢)</p>
+            <p><strong>الدراسة:</strong> 
+                <br> روضة القمة 
+                <br> مدرسة الإمام الغزالي (الأساس) 
+                <br> مدرسة الفتح المبين الخاصة (الثانوي) 
+                <br> جامعة الرباط الوطني - كلية علوم الحاسوب (تقنية المعلومات)
+            </p>
+            <p><strong>الطموح:</strong> يرغب في أن يصبح مبرمجًا محترفًا وما زال يعمل لتحقيق حلمه.</p>
 
-        <div class="message-box">
-            <textarea placeholder="اكتب رسالتك هنا..."></textarea>
-            <button class="send-button">إرسال</button>
+            <div class="message-box">
+                <textarea placeholder="اكتب رسالتك هنا..."></textarea>
+                <button class="send-button">إرسال</button>
+            </div>
         </div>
     </div>
 
